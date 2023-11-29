@@ -73,3 +73,11 @@ section li {
 section li strong {
     color: #856363;
 }
+button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
