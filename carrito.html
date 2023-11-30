@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="prueba.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Tu Tienda</h1>
+    </header>
+
+    <section id="productos">
+        <!-- Imagen 1 -->
+        <img src="PHP-logo.svg.png" alt="Descripción 1" onclick="agregarAlCarrito('Nombre Artículo 1', 10.99)">
+
+        <!-- Imagen 2 -->
+    </section>
+
+    <section id="carrito">
+        <!-- Aquí mostrarás los elementos del carrito, puedes usar una tabla u otro formato según tus preferencias -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre del Artículo</th>
+                    <th>Precio</th>
+                </tr>
+            </thead>
+            <tbody id="listaCarrito">
+                <!-- Aquí se agregarán dinámicamente los elementos del carrito -->
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>© 2023 Tu Tienda</p>
+    </footer>
+</body>
+</html>

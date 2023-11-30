@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <title>Cuadro Comparativo</title>
   <link rel="stylesheet" href="compara.css">
-  <script type="text/javascript" src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+  <script src="html2canvas.js"></script>
+  <script src="jsPdf.js"></script>
 </head>
 <body id="cuerpo">
 
-<div class="container" id="prueba">
+    <div class="container">
   <h1>Cuadro Comparativo</h1>
   <table id="comparativo">
     <thead>
@@ -50,12 +51,12 @@
 
     </tbody>
   </table>
-</div>
-<section>
+    </div>
+    <section>
     <h2>¿Qué son clases en React?</h2>
     <p>En React, las clases son una forma de definir componentes utilizando la sintaxis de clases de JavaScript. Antes de la introducción de los "Hooks" en React 16.8, las clases eran la forma principal de crear componentes en React. Una clase en React es una plantilla que define el comportamiento y la estructura de un componente. Las clases de React heredan de la clase base `React.Component`y deben implementar un método obligatorio llamado `render()` que devuelve el elemento React que se mostrará en la interfaz de usuario</p>
-</section>
-<section>
+    </section>
+    <section>
     <h2>Principales eventos de React</h2>
     <p>Algunos de los principales son:</p>
 
@@ -67,24 +68,33 @@
         <li><strong>onKeyPress:</strong> Se activa cuando se presiona una tecla mientras un elemento tiene foco.</li>
     </ul>
 
-</section>
+    </section>
 
-<br>
+    <br>
  <div class="but">
     <form action="index.html" method="input">
         <input class="button" type="submit" value="volver">
       </form>
  </div>
+ <br>
+ <div class="but"><button onclick="generatePDF()">descargar PDF</button></div>
+  
 
-<br>
-<button id="descargarPDF">Descargar como PDF</button>
-
-<script>
-    document.getElementById('descargarPDF').addEventListener('click', () => {
-      const element = document.getElementById('cuerpo'); // Reemplaza 'tuIDDeElemento' con el ID de tu elemento HTML principal
-      html2pdf(element);
-    });
-  </script>
+  <script type="text/javascript">
+    function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        let doc = new jsPDF('l', 'px', [1920, 1080]);
+        let pdfjs = document.querySelector('#cuerpo');
+    
+        doc.html(pdfjs, {
+        callback: function (doc) {
+        doc.save("newpdf.pdf");
+         },
+         x: 12,
+         y: 12
+         });
+     }
+    </script>
     
 </body>
 </html>

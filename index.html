@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lenguajes De Programacion</title>
     <link rel="stylesheet" href="estilo.css">
+    <script src="html2canvas.js"></script>
+    <script src="jsPdf.js"></script>
+    <script src="prueba.js"></script>
 </head>
 
-<body>
+<body id="cuerpo">
     <header>
         <h1>Lenguajes de Programación</h1>
     </header>
@@ -85,7 +88,7 @@
         <img src="Python-Symbol_0.png">
         <img src="C++logo.svg">
         <img src="java.png">
-        <img src="PHP-logo.svg.png">
+        <img src="PHP-logo.svg.png" >
     </div>
 
     <section>
@@ -114,10 +117,29 @@
             </code>
         </pre>
     </section>
+    <br>
+    <div class="but"><button onclick="generatePDF()">descargar PDF</button></div>
+  
 
+  <script type="text/javascript">
+    function generatePDF() {
+        const { jsPDF } = window.jspdf;
+        let doc = new jsPDF('l', 'px', [1920, 1080]);
+        let pdfjs = document.querySelector('#cuerpo');
+    
+        doc.html(pdfjs, {
+        callback: function (doc) {
+        doc.save("newpdf.pdf");
+         },
+         x: 12,
+         y: 12
+         });
+     }
+    </script>
     <footer>
         <p>© 2023 Lenguajes de Programación</p>
     </footer>
+    
 
 </body>
 

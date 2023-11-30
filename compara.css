@@ -75,9 +75,11 @@ section li strong {
 }
 button {
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #856363;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
+button {background-color: #856363;} 
+button:hover {background: #856363c3;}

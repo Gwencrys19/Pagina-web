@@ -68,3 +68,15 @@ b{
     width: 200px;
     height: 100px;
 }
+button {
+    padding: 10px;
+    background-color: #856363;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.but{
+    text-align: center;
+    
+}
